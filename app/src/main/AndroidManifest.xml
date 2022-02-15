@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Intent_Nepp">
         <activity
             android:name=".OtherActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
