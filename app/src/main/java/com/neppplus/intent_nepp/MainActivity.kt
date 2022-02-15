@@ -21,9 +21,16 @@ class MainActivity : AppCompatActivity() {
         btnSendMessage.setOnClickListener {
 
 //            1. 뭐라고 입력했는지 추출
-
+            val inputMessage = edtMessage.text.toString()
 
 //            2. 추출한 내용을 다른 화면에 전달 (화면 이동 포함)
+
+            val myIntent = Intent(this, ViewMessageActivity::class.java)
+
+//            myIntent에, 입력한 내용을 첨부.
+            myIntent.putExtra("message", inputMessage)
+
+            startActivity(myIntent)
 
         }
 
