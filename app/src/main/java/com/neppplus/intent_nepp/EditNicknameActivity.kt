@@ -24,6 +24,8 @@ class EditNicknameActivity : AppCompatActivity() {
 //            실제 복귀 결과로 세팅.
 //            확인을 눌렀다 + 들고 돌아갈 데이터
             setResult(RESULT_OK, resultIntent)
+            finish()
+
 
         }
     }
