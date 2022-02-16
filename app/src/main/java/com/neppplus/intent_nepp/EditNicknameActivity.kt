@@ -12,7 +12,7 @@ class EditNicknameActivity : AppCompatActivity() {
 
         btnSave.setOnClickListener {
 
-//            입력된 닉네이을 변수에 저장.
+//            입력된 닉네임을 변수에 저장.
             val inputNickname = edtNickname.text.toString()
 
 //            복귀시 데이터를 들고 갈 Intent를 생성.

@@ -3,6 +3,7 @@ package com.neppplus.intent_nepp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -45,6 +46,29 @@ class MainActivity : AppCompatActivity() {
 //            새로운 닉네임을 받아내러 (결과를 얻으러) 가는 동작.
             startActivityForResult(myIntent, REQ_CODE_NICKNAME) // 숫자값으로, 닉네임을 받으러 간다고 구별하는데 사용.
 
+        }
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+//        어떤 결과든, 결과를 받아 돌아올때 실행.
+//        ex) 닉네임을 받아와도, 핸드폰 번호를 받아와도 모두 이 코드가 실행됨.
+
+//        닉네임을 받아와서 실행된게 맞는지?
+        if( requestCode == REQ_CODE_NICKNAME){
+
+//            확인 버튼 누른게 맞는지?
+            if(resultCode == RESULT_OK){
+
+                Toast.makeText(this,"닉네임 변경에서 OK 누름.", Toast.LENGTH_SHORT).show()
+
+//                닉네임 -> 받아왔을때, 받아온 닉네임 추출
+//                data : resultIntent가 담겨 있다.
+                val newNickname = data?.getStringExtra("nick")
+                txtNickname.text = newNickname
+            }
         }
 
     }
